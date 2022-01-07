@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <h5 class="display-5">Login to your portfolio</h5>
+          <div class="text-danger font-weight-bold">
+              {% for error in errors %}
+                <li>{{error}}</li>
+              {% endfor %}
+          </div>
+    
+          <div class="text-success font-weight-bold">
+            {% if msg %}
+            <div class="badge bg-success text-wrap font-weight-bold" style="font-size: large;">
+              {{msg}}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+    
+    
+        <div class="row my-5">
+          <form method="POST">
+            <div class="mb-3">
+              <label></label>
+              <input type="text" required placeholder="Your user_id" name="user_id" value="{{user_id}}" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+</body>
+</html>
+

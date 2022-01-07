@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido {{user_id}}</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+
+	<div class="wraper">
+		<div class="container">
+		<div class="left-content p-30">
+
+
+			<div class="left-footer">
+				<div class="social-icons">
+					<ul>
+						<li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+						<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<div class="foot-contact">
+					<ul>
+						<h3>Last five twitters</h3>
+						{% for tweet in tweets -%}
+						<ul>
+							<p>{{ tweet }}</p>
+						</ul>
+					  	{% endfor -%}
+
+					</ul>
+				</div>
+				
+			</div>
+
+		</div>
+		<div class="main-content">
+			<div class="section1 p-30" id="Home">
+			<div class="sec-title">
+	<div class="pg-sub-title">Home</div>
+	<div class="pg-title">My Profile</div>
+			</div>
+				<div class="d-flex-align-center">
+				<div class="user-img flex-1"><img src={{image_url}}></div>
+				<div class="user-profile flex-1">
+					<div class="pro-details">
+						<div class="sm-text">HELLO EVERYBODY, I AM {{ names }}</div>
+						<div class="name">{{last_names}}</div>
+						<div class="role">{{ tittle }}</div>
+
+					</div>
+					<div class="text"> {{ description }} </div>
+                    <div class="text"> {{ description }} </div>
+					<div class="pr-list">
+					</div>
+			<div class="social-icons-head">
+					<ul>
+						<li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+						<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+
+				</div>
+			</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>
