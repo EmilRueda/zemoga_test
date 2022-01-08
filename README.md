@@ -46,7 +46,7 @@ Features included:
 1. Run it with Docker.
 ```bash
  $ docker build -t zemoga_test .
- $ docker run -d --name container zemoga_test
+ $ docker run -d --name container -p 8000:8000 zemoga_test
 ```
 It will run in the localhost
 
